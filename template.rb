@@ -17,7 +17,6 @@ gem_group :default do
     gem 'active_hash'
     gem 'grape'
     gem 'grape-jbuilder'
-    gem 'friendly_id'
     gem 'migration_comments'
     gem 'seed-fu'
     gem 'httparty'
