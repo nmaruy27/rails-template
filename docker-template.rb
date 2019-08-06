@@ -24,7 +24,6 @@ gem_group :default do
 end
 
 gem_group :development do
-    gem 'foreman'
     gem 'capistrano'
     gem 'capistrano-rails'
     gem 'capistrano-bundler'
@@ -125,16 +124,3 @@ insert_into_file 'config/application.rb', <<APP, after: '# -- all .rb files in t
       env['api.tilt.root'] = Rails.root.join 'app', 'views', 'apis'
     end
 APP
-
-
-# foreman
-create_file 'Procfile', <<PROC
-rails: rails s -p 3000
-PROC
-
-after_bundle do
-  # git
-  git :init
-  git add: '.'
-  git commit: "-m 'initial commit'"
-end
